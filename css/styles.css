@@ -1,0 +1,52 @@
+
+.login-logo a img {
+	width: 50%;
+}
+
+.logo a img {
+	width: 70%;
+}
+
+a.logo img {
+	width: 40%;
+}
+
+/* product image side by side */
+.main-content .row .column {
+	float: left;
+	width: 25%;
+	padding: 15px ;
+	position: relative;
+  }
+
+  .main-content .row::after {
+	content: "";
+	clear: both;
+	display: table;
+  }
+
+/* hover on image of product, edit & delete button apper */ 
+.main-content .row .column .middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  cursor: pointer
+}
+
+.main-content .row .column:hover .image {
+	opacity: 0.3;
+}
+
+.main-content .row .column:hover .middle {
+	opacity: 1;
+  }
+
+  /* Initially hide the update section */
+.main-content #updateProduct {
+  display: none;
+}
