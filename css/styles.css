@@ -53,6 +53,6 @@ a.logo img {
 
  /* add responsiveness of video */
  .main-content video {
-    width: 80%;
+    width: 100%;
     height: auto;
  }
