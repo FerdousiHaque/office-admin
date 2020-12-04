@@ -50,3 +50,9 @@ a.logo img {
 .main-content #updateProduct {
   display: none;
 }
+
+ /* add responsiveness of video */
+ .main-content video {
+    width: 80%;
+    height: auto;
+ }
