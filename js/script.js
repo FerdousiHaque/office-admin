@@ -1,17 +1,15 @@
 // table.html --> show all product image & hover edit + delete button activity
 db.collection('products').get().then((snapshot) => {
     snapshot.docs.forEach(doc => {
-      
         var product = '<div class="column">'   //image section
          + '<img style="width:100%" class="image" src="images/' + doc.data().image + '">'
          +'<div class="middle">'
-         +"<div class='button' onClick=updateData('"
-         +doc.id+'\')><i class="fa fa-edit" style="font-size:22px"></i></div>'
-         +"<div class='button' onClick=deleteData('"
-         +doc.id+'\')><span aria-hidden="true" style="font-size:40px">&times;</span></div>'
+         +"<a><button onClick=updateData('"
+         +doc.id+'\')><i class="fa fa-edit" style="font-size:22px"></i></button>'
+         +"<button onClick=deleteData('"
+         +doc.id+'\')><i class="fa fa-close" style="font-size:22px"></i></button></a>'
          + '</div>'
          + '</div>';
-
 
         $("#showProduct").append(product);
     });
@@ -25,31 +23,6 @@ db.collection('settings').get().then((snapshot) => {
     var aboutTextArea = document.getElementById("exampleInputTextAreaAbout1");
     aboutTextArea.value = doc.data().about;
     updateAbout(doc.id);
-    });
-}).catch(function(error) {
-    console.log("Error getting document:", error);
-});
-
-//dashboard.html --> put settings data in all input fields
-db.collection('settings').get().then((snapshot) => {
-  snapshot.docs.forEach(doc => {
-    var tittle_input = document.getElementById("exampleInputTittle1");
-    var heading_input = document.getElementById("exampleInputHeading1");
-    var address_input = document.getElementById("exampleInputAddress1");
-    var faddress_input = document.getElementById("exampleInputFullAddress1");
-    var email_input = document.getElementById("exampleInputEmail1");
-    var mobile_input = document.getElementById("exampleInputMobile1");
-    var copyright_input = document.getElementById("exampleInputCopyright1");
-
-    tittle_input.value = doc.data().tittle;
-    heading_input.value = doc.data().heading;
-    address_input.value = doc.data().address;
-    faddress_input.value = doc.data().fullAddress;
-    email_input.value = doc.data().email;
-    mobile_input.value = doc.data().mobile;
-    copyright_input.value = doc.data().copyright;
-    updateAbout(doc.id,tittle_input.value,heading_input.value,address_input.value,
-      faddress_input.value,email_input.value,mobile_input.value,copyright_input.value);
     });
 }).catch(function(error) {
     console.log("Error getting document:", error);
