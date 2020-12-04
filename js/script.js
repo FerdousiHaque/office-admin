@@ -5,9 +5,9 @@ db.collection('products').get().then((snapshot) => {
          + '<img style="width:100%" class="image" src="images/' + doc.data().image + '">'
          +'<div class="middle">'
          +"<a><button onClick=updateData('"
-         +doc.id+'\')><i class="fa fa-edit" style="font-size:22px"></i></button>'
+         +doc.id+'\')><i class="fa fa-edit" style="font-size:22px; color: #008CBA"></i></button>'
          +"<button onClick=deleteData('"
-         +doc.id+'\')><i class="fa fa-close" style="font-size:22px"></i></button></a>'
+         +doc.id+'\')><i class="fa fa-close" style="font-size:22px; color: #f44336"></i></button></a>'
          + '</div>'
          + '</div>';
 
